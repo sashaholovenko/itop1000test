@@ -1,0 +1,14 @@
+<div class="currency__main">
+<h1 class="currency__main-header">Currency convertor</h1>
+<app-converter-form
+  (currencyTypeChangeEvent)="updateCurrencyType($event, currencyTypes.target, 'base')"
+  (currencyAmountChangeEvent)="updateTargetCurrencyAmount($event)"
+  [currencyAmount$]="baseCurrencyAmount$">
+</app-converter-form>
+
+<app-converter-form
+  (currencyTypeChangeEvent)="updateCurrencyType(currencyTypes.base, $event, 'target')"
+  (currencyAmountChangeEvent)="updateBaseCurrencyAmount($event)"
+  [currencyAmount$]="targetCurrencyAmount$">
+</app-converter-form>
+</div>

@@ -1,0 +1,14 @@
+<form class="converter__form" [formGroup]="converterForm">
+  <div>
+  <p>Enter value</p>
+  <input type="text" formControlName="currencyAmount" class="converter__form-input" [value]="(currencyAmount$ | async) | number" (input)="onInputChange($event)">
+  </div>
+  <div>
+  <p>Choose currency</p>
+  <select formControlName="currencyType">
+    <option *ngFor="let currency of currencies" [ngValue]="currency">
+      {{currency}}
+    </option>
+  </select>
+</div>
+</form>
